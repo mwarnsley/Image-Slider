@@ -6,9 +6,14 @@ $(document).ready(function(){
         var animationSpeed = 1000;
         var pause = 3000;
 
+        //caching the dom
+        var $slider = $("#slider");
+        var $slideContainer = $slider.find(".slides");
+        var $slides = $slideContainer.find(".slide");
+
         //set interval function to animate for the slider speed and pausing
         setInterval(function(){
-            $("#slider .slides").animate({'margin-left': '-=' + width}, animationSpeed);
+            $slideContainer.animate({'margin-left': '-=' + width}, animationSpeed);
         }, pause);
     })();
 });
